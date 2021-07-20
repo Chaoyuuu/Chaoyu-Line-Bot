@@ -40,15 +40,15 @@ public class ExperienceHandler extends MessageHandler {
     private List<CarouselColumn> getCarouselColumns() {
         return Arrays.asList(
                 new CarouselColumn(
-                        URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
+                        URI.create("https://avatars.githubusercontent.com/u/61681944?s=200&v=4"),
                         "Judge Girl", "This is a Cloud-Native Online Judge System",
                         singletonList(getUriAction("GitHub", "https://github.com/Judge-Girl"))),
                 new CarouselColumn(
-                        URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
+                        URI.create("https://avatars.githubusercontent.com/u/72117984?s=200&v=4"),
                         "Spring Cloud in Python", "Reverse-engineering over Spring-Cloud into Python",
                         singletonList(getUriAction("GitHub", "https://github.com/Spring-Cloud-In-Python/Spring-Cloud-in-Python"))),
                 new CarouselColumn(
-                        URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
+                        URI.create("https://avatars.githubusercontent.com/u/72117984?s=200&v=4"),
                         "Chinese Chess", "A Chinese Chess is written under TDD and designed with OOA/D",
                         singletonList(getUriAction("GitHub", "https://github.com/Chaoyuuu/ChineseChess"))));
     }
