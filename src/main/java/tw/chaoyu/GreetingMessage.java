@@ -38,7 +38,7 @@ public class GreetingMessage {
 
     private List<Emoji> getEmojis() {
         return Arrays.asList(
-                getEmoji(20, "5ac21c46040ab15980c9b442", "024")
+                getEmoji(19, "5ac21c46040ab15980c9b442", "024")
 //                getEmoji(425, "5ac2213e040ab15980c9b447", "153"),
 //                getEmoji(445, "5ac2213e040ab15980c9b447", "161")
         );
