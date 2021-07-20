@@ -1,4 +1,4 @@
-package tw.chaoyu;
+package tw.chaoyu.messageHandler;
 
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
@@ -14,6 +14,7 @@ public abstract class MessageHandler {
     }
 
     public abstract boolean isTargetText(String text);
+
     public abstract Message getMessage();
 
     public Message response(String text) {

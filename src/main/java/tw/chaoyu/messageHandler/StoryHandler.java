@@ -1,4 +1,4 @@
-package tw.chaoyu;
+package tw.chaoyu.messageHandler;
 
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
