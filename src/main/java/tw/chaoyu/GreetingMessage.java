@@ -1,7 +1,6 @@
 package tw.chaoyu;
 
 import com.linecorp.bot.model.action.MessageAction;
-import com.linecorp.bot.model.action.PostbackAction;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.message.quickreply.QuickReply;
@@ -38,18 +37,11 @@ public class GreetingMessage {
         return Arrays.asList(
                 QuickReplyItem.builder()
                         .imageUrl(new URI("https://icons8.github.io/flat-color-icons/svg/like.svg"))
-                        .action(new MessageAction("story", "Tell me your story"))
+                        .action(new MessageAction("Tell me your story", "Tell me your story"))
                         .build(),
                 QuickReplyItem.builder()
                         .imageUrl(new URI("https://icons8.github.io/flat-color-icons/svg/services.svg"))
-                        .action(new MessageAction("job", "Are you an engineer?"))
-                        .build(),
-                QuickReplyItem.builder()
-                        .action(PostbackAction.builder()
-                                .label("PostbackAction")
-                                .text("PostbackAction clicked")
-                                .data("{PostbackAction: true}")
-                                .build())
+                        .action(new MessageAction("Are you an engineer?", "Are you an engineer?"))
                         .build()
         );
     }
