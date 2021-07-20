@@ -23,6 +23,6 @@ public class SkillHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
-        return Collections.singletonList(new TextMessage("I am familiar with JAVA and OOP"));
+        return Collections.singletonList(new TextMessage("I’m familiar with web development under Spring boot/react, have hands-on experience with containerized technology and especially Drone CI/CD :D"));
     }
 }

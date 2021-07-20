@@ -4,7 +4,6 @@ import com.linecorp.bot.model.action.MessageAction;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.quickreply.QuickReply;
 import com.linecorp.bot.model.message.quickreply.QuickReplyItem;
-import lombok.SneakyThrows;
 
 import java.net.URI;
 import java.util.Arrays;
@@ -25,9 +24,8 @@ public class GreetingMessage {
     }
 
     public Message getMessage() {
-        String greeting = "Hi, I'm Chaoyu Lee.$\n$";
-//                "I’m familiar with web development under Spring boot/react, have hands-on experience with containerized technology and especially Drone CI/CD. I’m also an aggressive learner practicing product design and other non-coding skills (e.g., Domain- Driven design). I consider myself a productive and good-at-cooperation teammate who really helps.\n\n" +
-//                "You can ask me some questions in here! $\nLet's have a fun!$";
+        String greeting = "Hi, I'm Chaoyu Lee.$\n" +
+                "You can ask me some questions in here! Let's have a fun!$$";
 
         return builder()
                 .text(greeting)
@@ -38,10 +36,9 @@ public class GreetingMessage {
 
     private List<Emoji> getEmojis() {
         return Arrays.asList(
-                getEmoji(19, "5ac21c46040ab15980c9b442", "024"),
-                getEmoji(21, "5ac21c46040ab15980c9b442", "024")
-//                getEmoji(425, "5ac2213e040ab15980c9b447", "153"),
-//                getEmoji(445, "5ac2213e040ab15980c9b447", "161")
+                getEmoji(19, "5ac1bfd5040ab15980c9b435", "088"),
+                getEmoji(77, "5ac223c6040ab15980c9b44a", "136"),
+                getEmoji(78, "5ac1bfd5040ab15980c9b435", "008")
         );
     }
 
@@ -57,15 +54,14 @@ public class GreetingMessage {
         return QuickReply.items(getQuickReplyItems());
     }
 
-    @SneakyThrows
     private List<QuickReplyItem> getQuickReplyItems() {
         return Arrays.asList(
                 QuickReplyItem.builder()
-                        .imageUrl(new URI("https://icons8.github.io/flat-color-icons/svg/like.svg"))
+                        .imageUrl(URI.create("https://i.imgur.com/EL9vLaA.png"))
                         .action(new MessageAction(TELL_ME_YOUR_STORY, TELL_ME_YOUR_STORY))
                         .build(),
                 QuickReplyItem.builder()
-                        .imageUrl(new URI("https://icons8.github.io/flat-color-icons/svg/services.svg"))
+                        .imageUrl(URI.create("https://i.imgur.com/SInJogx.png"))
                         .action(new MessageAction(ARE_YOU_AN_ENGINEER, ARE_YOU_AN_ENGINEER))
                         .build()
         );
