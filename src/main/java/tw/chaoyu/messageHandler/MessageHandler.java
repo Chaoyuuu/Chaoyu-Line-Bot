@@ -34,7 +34,7 @@ public abstract class MessageHandler {
         return new MessageHandler(null) {
             @Override
             public boolean isTargetText(String text) {
-                return false;
+                return true;
             }
 
             @Override
