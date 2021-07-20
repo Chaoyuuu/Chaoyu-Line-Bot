@@ -11,6 +11,7 @@ import com.linecorp.bot.model.message.StickerMessage;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.response.BotApiResponse;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
+import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import static tw.chaoyu.GreetingMessage.getGreetingMessage;
  * @author chaoyulee chaoyu2330@gmail.com
  */
 @AllArgsConstructor
+@LineMessageHandler
 public class IntroductionController {
     private final MessageHandler messageHandler;
 
