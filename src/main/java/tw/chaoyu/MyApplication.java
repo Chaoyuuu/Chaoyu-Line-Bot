@@ -2,6 +2,7 @@ package tw.chaoyu;
 
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
+import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
@@ -9,6 +10,8 @@ import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import static tw.chaoyu.GreetingMessage.*;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
@@ -24,10 +27,13 @@ public class MyApplication {
     public Message handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
         System.out.println("event: " + event);
         final String originalMessageText = event.getMessage().getText();
-        if (originalMessageText.equals("你好")) {
-            return new TextMessage("Hi, I'm chaoyu Lee.");
-        }
         return new TextMessage(originalMessageText);
+    }
+
+    @EventMapping
+    public Message handleStickerMessageEvent(MessageEvent<StickerMessageContent> event) {
+        System.out.println("event: " + event);
+        return getGreetingMessage();
     }
 
     @EventMapping
