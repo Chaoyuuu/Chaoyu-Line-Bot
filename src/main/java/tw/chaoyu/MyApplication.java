@@ -24,6 +24,9 @@ public class MyApplication {
     public Message handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
         System.out.println("event: " + event);
         final String originalMessageText = event.getMessage().getText();
+        if (originalMessageText.equals("你好")) {
+            return new TextMessage("Hi, I'm chaoyu Lee.");
+        }
         return new TextMessage(originalMessageText);
     }
 
