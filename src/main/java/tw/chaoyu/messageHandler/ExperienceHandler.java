@@ -41,15 +41,15 @@ public class ExperienceHandler extends MessageHandler {
         return Arrays.asList(
                 new CarouselColumn(
                         URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
-                        "Judge Girl", "This is a Cloud-Native Online Judge System in the NTU.",
+                        "Judge Girl", "This is a Cloud-Native Online Judge System.",
                         singletonList(getUriAction("GitHub", "https://github.com/Judge-Girl"))),
                 new CarouselColumn(
                         URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
-                        "Spring Cloud in Python", "Conduct a reverse-engineering over Spring-Cloud components and reimplement them into Python.",
+                        "Spring Cloud in Python", "Reverse-engineering over Spring-Cloud into Python.",
                         singletonList(getUriAction("GitHub", "https://github.com/Spring-Cloud-In-Python/Spring-Cloud-in-Python"))),
                 new CarouselColumn(
                         URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"),
-                        "Chinese Chess", "A Chinese Chess game written under TDD and OO design.",
+                        "Chinese Chess", "A Chinese Chess is written under TDD and designed with OOA/D.",
                         singletonList(getUriAction("GitHub", "https://github.com/Chaoyuuu/ChineseChess"))));
     }
 

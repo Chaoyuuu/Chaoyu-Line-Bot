@@ -39,19 +39,22 @@ public class EngineerHandler extends MessageHandler {
         );
     }
 
-    @SneakyThrows
     private Message getQuickReplyMessage() {
-        final QuickReply quickReply = QuickReply.items(getQuickReplyItems());
         String greeting = "Yes!";
 
         return TextMessage
                 .builder()
                 .text(greeting)
-                .quickReply(quickReply)
+                .quickReply(getQuickReply())
                 .build();
     }
 
-    private List<QuickReplyItem> getQuickReplyItems() throws Exception {
+    private QuickReply getQuickReply() {
+        return QuickReply.items(getQuickReplyItems());
+    }
+
+    @SneakyThrows
+    private List<QuickReplyItem> getQuickReplyItems() {
         return Arrays.asList(
                 QuickReplyItem.builder()
                         .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
