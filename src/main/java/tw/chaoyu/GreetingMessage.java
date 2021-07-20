@@ -25,7 +25,7 @@ public class GreetingMessage {
     }
 
     public Message getMessage() {
-        String greeting = "Hi, I'm Chaoyu Lee.$";
+        String greeting = "Hi, I'm Chaoyu Lee.$\n$";
 //                "I’m familiar with web development under Spring boot/react, have hands-on experience with containerized technology and especially Drone CI/CD. I’m also an aggressive learner practicing product design and other non-coding skills (e.g., Domain- Driven design). I consider myself a productive and good-at-cooperation teammate who really helps.\n\n" +
 //                "You can ask me some questions in here! $\nLet's have a fun!$";
 
@@ -38,7 +38,8 @@ public class GreetingMessage {
 
     private List<Emoji> getEmojis() {
         return Arrays.asList(
-                getEmoji(19, "5ac21c46040ab15980c9b442", "024")
+                getEmoji(19, "5ac21c46040ab15980c9b442", "024"),
+                getEmoji(21, "5ac21c46040ab15980c9b442", "024")
 //                getEmoji(425, "5ac2213e040ab15980c9b447", "153"),
 //                getEmoji(445, "5ac2213e040ab15980c9b447", "161")
         );
