@@ -37,8 +37,8 @@ public class MyApplication {
         List<Message> messages = new ArrayList<>();
         messages.add(new TextMessage(originalMessageText));
         messages.add(new StickerMessage("789", "10856"));
-
-        return new ReplyMessage("thisIsToken", messages);
+        System.out.println("event: " + event);
+        return new ReplyMessage(event.getReplyToken(), messages);
     }
 
     @EventMapping
