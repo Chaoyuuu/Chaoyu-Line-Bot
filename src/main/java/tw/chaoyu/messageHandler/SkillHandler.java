@@ -3,8 +3,11 @@ package tw.chaoyu.messageHandler;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static tw.chaoyu.utils.Utils.getEmoji;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
@@ -23,6 +26,23 @@ public class SkillHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
-        return Collections.singletonList(new TextMessage("I’m familiar with web development under Spring boot/react, have hands-on experience with containerized technology and especially Drone CI/CD :D"));
+        String mySkills = "I’m familiar with web development under Spring boot/react. $\n" +
+                "I also have hands-on experience with containerized technology and especially Drone CI/CD. $";
+        return Collections.singletonList(
+                TextMessage.builder()
+                        .text(mySkills)
+                        .emojis(getEmojis())
+                        .build());
+    }
+
+    private List<TextMessage.Emoji> getEmojis() {
+        String gestureEmoji = "5ac21e6c040ab15980c9b444";
+        String thumb = "002";
+        String clapHand = "036";
+
+        return Arrays.asList(
+                getEmoji(59, gestureEmoji, thumb),
+                getEmoji(151, gestureEmoji, clapHand)
+        );
     }
 }

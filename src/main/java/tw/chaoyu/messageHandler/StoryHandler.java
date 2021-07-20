@@ -24,9 +24,11 @@ public class StoryHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
+        String sallySpecialEditionStickerPackage = "789";
+        String redHeartSally = "10856";
         return Arrays.asList(
-                new TextMessage("Here is my story !"),
-                new StickerMessage("789", "10856")
+                new TextMessage("This is my story!"),
+                new StickerMessage(sallySpecialEditionStickerPackage, redHeartSally)
         );
     }
 }

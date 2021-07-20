@@ -8,7 +8,6 @@ import com.linecorp.bot.model.message.quickreply.QuickReply;
 import com.linecorp.bot.model.message.quickreply.QuickReplyItem;
 import lombok.SneakyThrows;
 
-import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,18 +32,20 @@ public class EngineerHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
+        String moonSpecialEditionStickerPackage = "1070";
+        String cryingLaughingFace = "17844";
         return Arrays.asList(
-                new StickerMessage("1070", "17844"),
+                new StickerMessage(moonSpecialEditionStickerPackage, cryingLaughingFace),
                 getQuickReplyMessage()
         );
     }
 
     private Message getQuickReplyMessage() {
-        String greeting = "Yes!";
+        String responseMessage = "Yes!";
 
         return TextMessage
                 .builder()
-                .text(greeting)
+                .text(responseMessage)
                 .quickReply(getQuickReply())
                 .build();
     }
@@ -57,15 +58,12 @@ public class EngineerHandler extends MessageHandler {
     private List<QuickReplyItem> getQuickReplyItems() {
         return Arrays.asList(
                 QuickReplyItem.builder()
-                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
                         .action(new MessageAction("Skills?", WHAT_ARE_YOUR_SKILLS))
                         .build(),
                 QuickReplyItem.builder()
-                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
                         .action(new MessageAction("Experience?", WHAT_IS_YOUR_EXPERIENCE))
                         .build(),
                 QuickReplyItem.builder()
-                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/services.svg"))
                         .action(new MessageAction("Good Job!", YOU_DID_A_GOOD_JOB))
                         .build()
         );

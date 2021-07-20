@@ -22,7 +22,6 @@ public abstract class MessageHandler {
     public abstract List<Message> getMessages();
 
     public List<Message> response(String text) {
-        System.out.println("text in Handler " + text);
         if (isTargetText(text)) {
             return getMessages();
         } else {
@@ -39,7 +38,7 @@ public abstract class MessageHandler {
 
             @Override
             public List<Message> getMessages() {
-                return singletonList(new TextMessage("Hello, I'm Chaoyu Lee."));
+                return singletonList(new TextMessage("Hello, I'm Chaoyu Lee. :D"));
             }
         };
     }

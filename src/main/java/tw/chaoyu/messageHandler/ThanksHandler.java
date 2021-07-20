@@ -6,6 +6,8 @@ import com.linecorp.bot.model.message.StickerMessage;
 import java.util.Collections;
 import java.util.List;
 
+import static java.util.Collections.singletonList;
+
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
@@ -23,6 +25,8 @@ public class ThanksHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
-        return Collections.singletonList(new StickerMessage("8522", "16581267"));
+        String lineCharactersPrettyPhrasesStickerPackage = "8522";
+        String thankYou = "16581267";
+        return singletonList(new StickerMessage(lineCharactersPrettyPhrasesStickerPackage, thankYou));
     }
 }

@@ -13,6 +13,7 @@ import static com.linecorp.bot.model.message.TextMessage.Emoji;
 import static com.linecorp.bot.model.message.TextMessage.builder;
 import static tw.chaoyu.messageHandler.EngineerHandler.ARE_YOU_AN_ENGINEER;
 import static tw.chaoyu.messageHandler.StoryHandler.TELL_ME_YOUR_STORY;
+import static tw.chaoyu.utils.Utils.getEmoji;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
@@ -25,7 +26,7 @@ public class GreetingMessage {
 
     public Message getMessage() {
         String greeting = "Hi, I'm Chaoyu Lee.$\n" +
-                "You can ask me some questions in here! Let's have a fun!$$";
+                "You are welcome to ask me some questions in here!\nLet's have a fun! $$";
 
         return builder()
                 .text(greeting)
@@ -35,19 +36,17 @@ public class GreetingMessage {
     }
 
     private List<Emoji> getEmojis() {
-        return Arrays.asList(
-                getEmoji(19, "5ac1bfd5040ab15980c9b435", "088"),
-                getEmoji(77, "5ac223c6040ab15980c9b44a", "136"),
-                getEmoji(78, "5ac1bfd5040ab15980c9b435", "008")
-        );
-    }
+        String lineEmojiPackage = "5ac1bfd5040ab15980c9b435";
+        String blushingBrown = "088";
+        String smilingFace = "008";
+        String birthDayPackage = "5ac223c6040ab15980c9b44a";
+        String beer = "136";
 
-    private Emoji getEmoji(int index, String productID, String emojiID) {
-        return Emoji.builder()
-                .index(index)
-                .productId(productID)
-                .emojiId(emojiID)
-                .build();
+        return Arrays.asList(
+                getEmoji(19, lineEmojiPackage, blushingBrown),
+                getEmoji(89, birthDayPackage, beer),
+                getEmoji(90, lineEmojiPackage, smilingFace)
+        );
     }
 
     private QuickReply getQuickReply() {
@@ -55,13 +54,16 @@ public class GreetingMessage {
     }
 
     private List<QuickReplyItem> getQuickReplyItems() {
+        String redHeartUri = "https://i.imgur.com/EL9vLaA.png";
+        String cursor = "https://i.imgur.com/SInJogx.png";
+
         return Arrays.asList(
                 QuickReplyItem.builder()
-                        .imageUrl(URI.create("https://i.imgur.com/EL9vLaA.png"))
+                        .imageUrl(URI.create(redHeartUri))
                         .action(new MessageAction(TELL_ME_YOUR_STORY, TELL_ME_YOUR_STORY))
                         .build(),
                 QuickReplyItem.builder()
-                        .imageUrl(URI.create("https://i.imgur.com/SInJogx.png"))
+                        .imageUrl(URI.create(cursor))
                         .action(new MessageAction(ARE_YOU_AN_ENGINEER, ARE_YOU_AN_ENGINEER))
                         .build()
         );
