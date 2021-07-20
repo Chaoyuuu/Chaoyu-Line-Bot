@@ -55,15 +55,15 @@ public class EngineerHandler extends MessageHandler {
         return Arrays.asList(
                 QuickReplyItem.builder()
                         .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
-                        .action(new MessageAction(WHAT_ARE_YOUR_SKILLS, WHAT_ARE_YOUR_SKILLS))
+                        .action(new MessageAction("Skills?", WHAT_ARE_YOUR_SKILLS))
                         .build(),
                 QuickReplyItem.builder()
                         .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
-                        .action(new MessageAction(WHAT_IS_YOUR_EXPERIENCE, WHAT_IS_YOUR_EXPERIENCE))
+                        .action(new MessageAction("Experience?", WHAT_IS_YOUR_EXPERIENCE))
                         .build(),
                 QuickReplyItem.builder()
                         .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/services.svg"))
-                        .action(new MessageAction(YOU_DID_A_GOOD_JOB, YOU_DID_A_GOOD_JOB))
+                        .action(new MessageAction("Good Job!", YOU_DID_A_GOOD_JOB))
                         .build()
         );
     }
