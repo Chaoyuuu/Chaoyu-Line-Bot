@@ -22,6 +22,7 @@ public abstract class MessageHandler {
     public abstract List<Message> getMessages();
 
     public List<Message> response(String text) {
+        System.out.println("text in Handler " + text);
         if (isTargetText(text)) {
             return next.response(text);
         } else {
