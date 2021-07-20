@@ -34,13 +34,13 @@ public class EngineerHandler extends MessageHandler {
     @Override
     public List<Message> getMessages() {
         return Arrays.asList(
-                getResponseMessage(),
-                new StickerMessage("1070", "17844")
+                new StickerMessage("1070", "17844"),
+                getQuickReplyMessage()
         );
     }
 
     @SneakyThrows
-    private Message getResponseMessage() {
+    private Message getQuickReplyMessage() {
         final QuickReply quickReply = QuickReply.items(getQuickReplyItems());
         String greeting = "Yes!";
 
