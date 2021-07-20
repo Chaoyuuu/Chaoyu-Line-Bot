@@ -1,27 +1,70 @@
 package tw.chaoyu.messageHandler;
 
+import com.linecorp.bot.model.action.MessageAction;
 import com.linecorp.bot.model.message.Message;
+import com.linecorp.bot.model.message.StickerMessage;
 import com.linecorp.bot.model.message.TextMessage;
+import com.linecorp.bot.model.message.quickreply.QuickReply;
+import com.linecorp.bot.model.message.quickreply.QuickReplyItem;
+import lombok.SneakyThrows;
+
+import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
+
+import static tw.chaoyu.messageHandler.ExperienceHandler.WHAT_IS_YOUR_EXPERIENCE;
+import static tw.chaoyu.messageHandler.SkillHandler.WHAT_ARE_YOUR_SKILLS;
+import static tw.chaoyu.messageHandler.ThanksHandler.YOU_DID_A_GOOD_JOB;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
 public class EngineerHandler extends MessageHandler {
-    public static final String engineerText = "Are you an engineer?";
+    public static final String ARE_YOU_AN_ENGINEER = "Are you an engineer?";
 
-    protected EngineerHandler(MessageHandler next) {
+    public EngineerHandler(MessageHandler next) {
         super(next);
     }
 
     @Override
     public boolean isTargetText(String text) {
-        return engineerText.equals(text);
+        return ARE_YOU_AN_ENGINEER.equals(text);
     }
 
     @Override
-    public Message getMessage() {
-        return TextMessage.builder()
-                .text("Yes !")
+    public List<Message> getMessages() {
+        return Arrays.asList(
+                getResponseMessage(),
+                new StickerMessage("1070", "17844")
+        );
+    }
+
+    @SneakyThrows
+    private Message getResponseMessage() {
+        final QuickReply quickReply = QuickReply.items(getQuickReplyItems());
+        String greeting = "Yes!";
+
+        return TextMessage
+                .builder()
+                .text(greeting)
+                .quickReply(quickReply)
                 .build();
+    }
+
+    private List<QuickReplyItem> getQuickReplyItems() throws Exception {
+        return Arrays.asList(
+                QuickReplyItem.builder()
+                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
+                        .action(new MessageAction(WHAT_ARE_YOUR_SKILLS, WHAT_ARE_YOUR_SKILLS))
+                        .build(),
+                QuickReplyItem.builder()
+                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/like.svg"))
+                        .action(new MessageAction(WHAT_IS_YOUR_EXPERIENCE, WHAT_IS_YOUR_EXPERIENCE))
+                        .build(),
+                QuickReplyItem.builder()
+                        .imageUrl(URI.create("https://icons8.github.io/flat-color-icons/svg/services.svg"))
+                        .action(new MessageAction(YOU_DID_A_GOOD_JOB, YOU_DID_A_GOOD_JOB))
+                        .build()
+        );
     }
 }

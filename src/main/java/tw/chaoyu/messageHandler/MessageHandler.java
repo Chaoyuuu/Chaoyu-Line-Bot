@@ -2,26 +2,30 @@ package tw.chaoyu.messageHandler;
 
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TextMessage;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+import static java.util.Collections.singletonList;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
+@Component
+@AllArgsConstructor
 public abstract class MessageHandler {
     private final MessageHandler next;
 
-    protected MessageHandler(MessageHandler next) {
-        this.next = next;
-    }
-
     public abstract boolean isTargetText(String text);
 
-    public abstract Message getMessage();
+    public abstract List<Message> getMessages();
 
-    public Message response(String text) {
+    public List<Message> response(String text) {
         if (isTargetText(text)) {
             return next.response(text);
         } else {
-            return getMessage();
+            return getMessages();
         }
     }
 
@@ -33,8 +37,8 @@ public abstract class MessageHandler {
             }
 
             @Override
-            public Message getMessage() {
-                return new TextMessage("Hello");
+            public List<Message> getMessages() {
+                return singletonList(new TextMessage("Hello, I'm Chaoyu Lee."));
             }
         };
     }
