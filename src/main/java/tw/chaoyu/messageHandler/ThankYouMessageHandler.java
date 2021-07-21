@@ -3,7 +3,6 @@ package tw.chaoyu.messageHandler;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.StickerMessage;
 
-import java.util.Collections;
 import java.util.List;
 
 import static java.util.Collections.singletonList;
@@ -11,10 +10,10 @@ import static java.util.Collections.singletonList;
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
-public class ThanksHandler extends MessageHandler {
+public class ThankYouMessageHandler extends MessageHandler {
     public static final String YOU_DID_A_GOOD_JOB = "You did a good job!";
 
-    public ThanksHandler(MessageHandler next) {
+    public ThankYouMessageHandler(MessageHandler next) {
         super(next);
     }
 

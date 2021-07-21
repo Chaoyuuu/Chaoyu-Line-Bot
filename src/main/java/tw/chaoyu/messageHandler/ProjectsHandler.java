@@ -16,16 +16,16 @@ import static java.util.Collections.singletonList;
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
-public class ExperienceHandler extends MessageHandler {
-    public static final String WHAT_IS_YOUR_EXPERIENCE = "What is your experience?";
+public class ProjectsHandler extends MessageHandler {
+    public static final String MORE_ABOUT_PROJECTS = "More about projects";
 
-    public ExperienceHandler(MessageHandler next) {
+    public ProjectsHandler(MessageHandler next) {
         super(next);
     }
 
     @Override
     public boolean isTargetText(String text) {
-        return WHAT_IS_YOUR_EXPERIENCE.equals(text);
+        return MORE_ABOUT_PROJECTS.equals(text);
     }
 
     @Override

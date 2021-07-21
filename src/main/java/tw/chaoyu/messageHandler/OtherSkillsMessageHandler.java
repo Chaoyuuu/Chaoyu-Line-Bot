@@ -12,10 +12,10 @@ import static tw.chaoyu.utils.Utils.getEmoji;
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
-public class SkillHandler extends MessageHandler {
-    public static final String WHAT_ARE_YOUR_SKILLS = "What are your skills?";
+public class OtherSkillsMessageHandler extends MessageHandler {
+    public static final String WHAT_ARE_YOUR_SKILLS = "What are your other skills?";
 
-    public SkillHandler(MessageHandler next) {
+    public OtherSkillsMessageHandler(MessageHandler next) {
         super(next);
     }
 
