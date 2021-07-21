@@ -34,7 +34,7 @@ public class MyStoryMessageHandler extends MessageHandler {
 
     private Message getMyStoryMessage() {
         String myStory = "I major in computer science at NTU. " +
-                "I always keep polishing my skills by participating in open-source projects. $ $" +
+                "I always keep polishing my skills by participating in open-source projects. $ $\n\n" +
                 "Apart from being a programmer, I’m also an aggressive learner practicing product design and other " +
                 "non-coding skills (e.g., Domain-Driven design). ";
 
@@ -45,7 +45,7 @@ public class MyStoryMessageHandler extends MessageHandler {
     }
 
     private List<TextMessage.Emoji> getEmojis() {
-        String birthDayPackage = "5ac223c6040ab15980c9b44a";
+        String birthDayPackage = "5ac2213e040ab15980c9b447";
         String sparkle = "085";
 
         return Arrays.asList(

@@ -66,7 +66,7 @@ public class EngineerMessageHandler extends MessageHandler {
         String pointingDown = "020";
 
         return Arrays.asList(
-                getEmoji(80, lineEmojiPackage, sunGlassesBrown),
+                getEmoji(79, lineEmojiPackage, sunGlassesBrown),
                 getEmoji(202, gestureEmoji, pointingDown)
         );
     }
