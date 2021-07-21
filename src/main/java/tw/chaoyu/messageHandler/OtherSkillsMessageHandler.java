@@ -46,7 +46,7 @@ public class OtherSkillsMessageHandler extends MessageHandler {
 
         return Arrays.asList(
                 getEmoji(59, gestureEmoji, thumb),
-                getEmoji(151, gestureEmoji, clapHand)
+                getEmoji(152, gestureEmoji, clapHand)
         );
     }
 }
