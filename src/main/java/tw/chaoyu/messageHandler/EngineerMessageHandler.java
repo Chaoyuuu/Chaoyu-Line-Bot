@@ -46,9 +46,9 @@ public class EngineerMessageHandler extends MessageHandler {
 
     private Message getIntroductionMessage() {
         String introduction = "Yes! I'm a software engineer. " +
-                "I specialize in Java and Object-Oriented Design. $ " +
+                "I specialize in Java and Object-Oriented Design. $ \n" +
                 "With the rich team-working experience, " +
-                "I consider myself a productive and good-at-cooperation teammate who really helps. " +
+                "I consider myself a productive and good-at-cooperation teammate who really helps. \n\n" +
                 "$ Click the buttons below and get more information about me! ";
 
         return TextMessage
@@ -67,7 +67,7 @@ public class EngineerMessageHandler extends MessageHandler {
 
         return Arrays.asList(
                 getEmoji(79, lineEmojiPackage, sunGlassesBrown),
-                getEmoji(202, gestureEmoji, pointingDown)
+                getEmoji(205, gestureEmoji, pointingDown)
         );
     }
 

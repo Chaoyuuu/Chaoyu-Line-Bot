@@ -30,7 +30,7 @@ public class OtherSkillsMessageHandler extends MessageHandler {
     }
 
     private Message getMySkillsMessage() {
-        String mySkills = "I’m familiar with web development under Spring boot/react. $\n" +
+        String mySkills = "I’m familiar with web development under Spring boot and react. $\n" +
                 "I also have hands-on experience with containerized technology and especially Drone CI/CD. $";
 
         return TextMessage.builder()
