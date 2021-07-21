@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static tw.chaoyu.messageHandler.OtherSkillsMessageHandler.WHAT_ARE_YOUR_SKILLS;
-import static tw.chaoyu.messageHandler.ProjectsHandler.MORE_ABOUT_PROJECTS;
+import static tw.chaoyu.messageHandler.ProjectMessageHandler.MORE_ABOUT_PROJECTS;
 import static tw.chaoyu.messageHandler.ThankYouMessageHandler.YOU_DID_A_GOOD_JOB;
 import static tw.chaoyu.utils.Utils.getEmoji;
 

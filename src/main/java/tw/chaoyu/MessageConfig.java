@@ -14,6 +14,6 @@ public class MessageConfig {
 
     @Bean
     public MessageHandler getMessageHandler() {
-        return new MyStoryMessageHandler(new EngineerMessageHandler(new OtherSkillsMessageHandler(new ProjectsHandler(new ThankYouMessageHandler(dummy())))));
+        return new MyStoryMessageHandler(new EngineerMessageHandler(new OtherSkillsMessageHandler(new ProjectMessageHandler(new ThankYouMessageHandler(dummy())))));
     }
 }

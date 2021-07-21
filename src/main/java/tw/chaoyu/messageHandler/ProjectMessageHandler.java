@@ -1,6 +1,5 @@
 package tw.chaoyu.messageHandler;
 
-import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TemplateMessage;
 import com.linecorp.bot.model.message.template.CarouselColumn;
@@ -17,10 +16,10 @@ import static tw.chaoyu.utils.Utils.getUriAction;
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
-public class ProjectsHandler extends MessageHandler {
+public class ProjectMessageHandler extends MessageHandler {
     public static final String MORE_ABOUT_PROJECTS = "More about projects";
 
-    public ProjectsHandler(MessageHandler next) {
+    public ProjectMessageHandler(MessageHandler next) {
         super(next);
     }
 
@@ -31,7 +30,7 @@ public class ProjectsHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
-        return singletonList(new TemplateMessage("altText", getCarouselTemplate()));
+        return singletonList(new TemplateMessage("Here are my projects~", getCarouselTemplate()));
     }
 
     private Template getCarouselTemplate() {
