@@ -26,7 +26,7 @@ public class GreetingMessage {
 
     public Message getMessage() {
         String greeting = "Hi, I'm Chaoyu Lee.$\n" +
-                "You are welcome to ask me some questions in here!\nLet's have a fun! $$";
+                "You are welcome to ask me some questions here!\nLet's have a fun! $$";
 
         return TextMessage.builder()
                 .text(greeting)
@@ -44,8 +44,8 @@ public class GreetingMessage {
 
         return Arrays.asList(
                 getEmoji(19, lineEmojiPackage, blushingBrown),
-                getEmoji(89, birthDayPackage, beer),
-                getEmoji(90, lineEmojiPackage, smilingFace)
+                getEmoji(86, birthDayPackage, beer),
+                getEmoji(87, lineEmojiPackage, smilingFace)
         );
     }
 
