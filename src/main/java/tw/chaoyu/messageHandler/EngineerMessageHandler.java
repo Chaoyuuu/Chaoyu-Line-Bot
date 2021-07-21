@@ -67,7 +67,7 @@ public class EngineerMessageHandler extends MessageHandler {
 
         return Arrays.asList(
                 getEmoji(97, lineEmojiPackage, sunGlassesBrown),
-                getEmoji(225, gestureEmoji, pointingDown)
+                getEmoji(223, gestureEmoji, pointingDown)
         );
     }
 
