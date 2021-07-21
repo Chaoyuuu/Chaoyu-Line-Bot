@@ -6,7 +6,6 @@ import com.linecorp.bot.model.message.StickerMessage;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.message.quickreply.QuickReply;
 import com.linecorp.bot.model.message.quickreply.QuickReplyItem;
-import lombok.SneakyThrows;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +13,7 @@ import java.util.List;
 import static tw.chaoyu.messageHandler.OtherSkillsMessageHandler.WHAT_ARE_YOUR_SKILLS;
 import static tw.chaoyu.messageHandler.ProjectsHandler.MORE_ABOUT_PROJECTS;
 import static tw.chaoyu.messageHandler.ThankYouMessageHandler.YOU_DID_A_GOOD_JOB;
+import static tw.chaoyu.utils.Utils.getEmoji;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
@@ -32,33 +32,49 @@ public class EngineerMessageHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
-        String moonSpecialEditionStickerPackage = "1070";
-        String cryingLaughingFace = "17844";
         return Arrays.asList(
-                new StickerMessage(moonSpecialEditionStickerPackage, cryingLaughingFace),
-                getQuickReplyMessage()
+                getStickerMessage(),
+                getIntroductionMessage()
         );
     }
 
-    private Message getQuickReplyMessage() {
-        String responseMessage = "Yes! I'm a software engineer. " +
-                "I specialize in Java and Object-Oriented Design. " +
+    private Message getStickerMessage() {
+        String moonSpecialEditionStickerPackage = "1070";
+        String cryingLaughingFace = "17844";
+        return new StickerMessage(moonSpecialEditionStickerPackage, cryingLaughingFace);
+    }
+
+    private Message getIntroductionMessage() {
+        String introduction = "Yes! I'm a software engineer. " +
+                "I specialize in Java and Object-Oriented Design. $ " +
                 "With the rich team-working experience, " +
                 "I consider myself a productive and good-at-cooperation teammate who really helps. " +
-                "Click the buttons below and get more information about me!";
+                "$ Click the buttons below and get more information about me! ";
 
         return TextMessage
                 .builder()
-                .text(responseMessage)
+                .text(introduction)
+                .emojis(getEmojis())
                 .quickReply(getQuickReply())
                 .build();
+    }
+
+    private List<TextMessage.Emoji> getEmojis() {
+        String lineEmojiPackage = "5ac1bfd5040ab15980c9b435";
+        String sunGlassesBrown = "091";
+        String gestureEmoji = "5ac21e6c040ab15980c9b444";
+        String pointingDown = "020";
+
+        return Arrays.asList(
+                getEmoji(80, lineEmojiPackage, sunGlassesBrown),
+                getEmoji(202, gestureEmoji, pointingDown)
+        );
     }
 
     private QuickReply getQuickReply() {
         return QuickReply.items(getQuickReplyItems());
     }
 
-    @SneakyThrows
     private List<QuickReplyItem> getQuickReplyItems() {
         return Arrays.asList(
                 QuickReplyItem.builder()

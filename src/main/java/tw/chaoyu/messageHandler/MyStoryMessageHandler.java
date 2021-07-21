@@ -7,11 +7,13 @@ import com.linecorp.bot.model.message.TextMessage;
 import java.util.Arrays;
 import java.util.List;
 
+import static tw.chaoyu.utils.Utils.getEmoji;
+
 /**
  * @author chaoyulee chaoyu2330@gmail.com
  */
 public class MyStoryMessageHandler extends MessageHandler {
-    public static final String TELL_ME_YOUR_STORY = "Tell me your story";
+    public static final String TELL_ME_YOUR_STORY = "Tell me your story !";
 
     public MyStoryMessageHandler(MessageHandler next) {
         super(next);
@@ -24,14 +26,37 @@ public class MyStoryMessageHandler extends MessageHandler {
 
     @Override
     public List<Message> getMessages() {
+        return Arrays.asList(
+                getMyStoryMessage(),
+                getStickerMessage()
+        );
+    }
+
+    private Message getMyStoryMessage() {
+        String myStory = "I major in computer science at NTU. " +
+                "I always keep polishing my skills by participating in open-source projects. $ $" +
+                "Apart from being a programmer, I’m also an aggressive learner practicing product design and other " +
+                "non-coding skills (e.g., Domain-Driven design). ";
+
+        return TextMessage.builder()
+                .text(myStory)
+                .emojis(getEmojis())
+                .build();
+    }
+
+    private List<TextMessage.Emoji> getEmojis() {
+        String birthDayPackage = "5ac223c6040ab15980c9b44a";
+        String sparkle = "085";
+
+        return Arrays.asList(
+                getEmoji(112, birthDayPackage, sparkle),
+                getEmoji(114, birthDayPackage, sparkle)
+        );
+    }
+
+    private Message getStickerMessage() {
         String sallySpecialEditionStickerPackage = "789";
         String redHeartSally = "10856";
-        return Arrays.asList(
-                new TextMessage("I am now studying computer science at the NTU. " +
-                        "In my spare time, I keep publishing my skills by participating in an open-source project. " +
-                        "Besides being a programmer, I’m also an aggressive learner practicing product design and other " +
-                        "non-coding skills (e.g., Domain-Driven design). "),
-                new StickerMessage(sallySpecialEditionStickerPackage, redHeartSally)
-        );
+        return new StickerMessage(sallySpecialEditionStickerPackage, redHeartSally);
     }
 }

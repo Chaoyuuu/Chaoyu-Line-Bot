@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Collections.singletonList;
+import static tw.chaoyu.utils.Utils.getUriAction;
 
 /**
  * @author chaoyulee chaoyu2330@gmail.com
@@ -48,13 +49,8 @@ public class ProjectsHandler extends MessageHandler {
                         "Spring Cloud in Python", "Reverse-engineering over Spring-Cloud into Python",
                         singletonList(getUriAction("GitHub", "https://github.com/Spring-Cloud-In-Python/Spring-Cloud-in-Python"))),
                 new CarouselColumn(
-                        URI.create("https://avatars.githubusercontent.com/u/72117984?s=200&v=4"),
+                        URI.create("https://i.imgur.com/cqjMtIh.png"),
                         "Chinese Chess", "A Chinese Chess is written under TDD and designed with OOA/D",
                         singletonList(getUriAction("GitHub", "https://github.com/Chaoyuuu/ChineseChess"))));
-    }
-
-    private URIAction getUriAction(String title, String uri) {
-        return new URIAction(title,
-                URI.create(uri), null);
     }
 }

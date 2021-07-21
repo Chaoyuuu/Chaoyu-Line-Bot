@@ -2,6 +2,7 @@ package tw.chaoyu;
 
 import com.linecorp.bot.model.action.MessageAction;
 import com.linecorp.bot.model.message.Message;
+import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.message.quickreply.QuickReply;
 import com.linecorp.bot.model.message.quickreply.QuickReplyItem;
 
@@ -10,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.linecorp.bot.model.message.TextMessage.Emoji;
-import static com.linecorp.bot.model.message.TextMessage.builder;
 import static tw.chaoyu.messageHandler.EngineerMessageHandler.ARE_YOU_AN_ENGINEER;
 import static tw.chaoyu.messageHandler.MyStoryMessageHandler.TELL_ME_YOUR_STORY;
 import static tw.chaoyu.utils.Utils.getEmoji;
@@ -28,7 +28,7 @@ public class GreetingMessage {
         String greeting = "Hi, I'm Chaoyu Lee.$\n" +
                 "You are welcome to ask me some questions in here!\nLet's have a fun! $$";
 
-        return builder()
+        return TextMessage.builder()
                 .text(greeting)
                 .emojis(getEmojis())
                 .quickReply(getQuickReply())
