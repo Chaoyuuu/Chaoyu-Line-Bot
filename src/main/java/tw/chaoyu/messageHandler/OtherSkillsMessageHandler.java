@@ -45,8 +45,8 @@ public class OtherSkillsMessageHandler extends MessageHandler {
         String clapHand = "036";
 
         return Arrays.asList(
-                getEmoji(59, gestureEmoji, thumb),
-                getEmoji(152, gestureEmoji, clapHand)
+                getEmoji(63, gestureEmoji, thumb),
+                getEmoji(155, gestureEmoji, clapHand)
         );
     }
 }
